@@ -2,12 +2,17 @@ package DLG.SJC.Lab04_Springboot.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table (name="usr_usuario")
 public class Usuario {
-   
+    
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name ="usr_id")    
 private Long id;
 
@@ -15,9 +20,9 @@ private Long id;
 private String nome;
 
 @Column(name ="usr_senha")
-private int senha;
+private String senha;
 
-public Usuario(String nome, int senha) {
+public Usuario(String nome, String senha) {
     this.nome = nome;
     this.senha = senha;
 }
@@ -38,11 +43,11 @@ public void setNome(String nome) {
     this.nome = nome;
 }
 
-public int getSenha() {
+public String getSenha() {
     return senha;
 }
 
-public void setSenha(int senha) {
+public void setSenha(String senha) {
     this.senha = senha;
 }
 
