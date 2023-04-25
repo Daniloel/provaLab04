@@ -32,8 +32,8 @@ public class TabelaTrabalhoController {
     return service.novaTabela(tabela);
     }
    
-    @GetMapping (value = "/id")
-    public TabelaTrabalho buscarPorId(@PathVariable("usuario") Long id) {
+    @GetMapping (value ="/id/{tabela}")
+    public TabelaTrabalho buscarPorId(@PathVariable("tabela") Long id) {
         return service.buscarPorId(id);
     }
 
